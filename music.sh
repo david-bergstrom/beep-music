@@ -1,6 +1,6 @@
 #!/bin/bash
 
-midicsv $1  | python2 parse.py | while IFS='' read -r line || [[ -n "$line" ]]; do
+midicsv $1 | python2 parse.py | while IFS='' read -r line || [[ -n "$line" ]]; do
     #echo "Text read from file: $line"
     f=$(awk -F',' '{print $1}' <<< "$line")
     s=$(awk -F',' '{print $2}' <<< "$line")
